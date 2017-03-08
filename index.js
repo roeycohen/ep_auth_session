@@ -14,7 +14,7 @@ exports.registerRoute = function(hook_name, args, cb) {
 		}
 
 		if (req.query.padName) {
-			var redirectUrl = '/p/';
+			var redirectUrl = (req.query.dir ? ('/' + req.query.dir) :  '') + '/p/';
 
 			if (req.query.groupID) {
 				redirectUrl += encodeURIComponent(req.query.groupID) + '$';
